@@ -60,7 +60,7 @@ class ProfileController extends Controller
     {
         return Gig::where('user_id',$id)
                   ->active()
-                  ->orderByRaw('RAND()')
+                  ->inRandomOrder()
                   ->paginate(12);
     }
 

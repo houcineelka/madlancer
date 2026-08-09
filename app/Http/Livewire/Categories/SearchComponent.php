@@ -71,7 +71,7 @@ class SearchComponent extends Component
                 $query->orderBy('price', 'asc');
                 break;
             default:
-                $query->orderByRaw('RAND()');
+                $query->inRandomOrder();
                 break;
         }
         return $query;

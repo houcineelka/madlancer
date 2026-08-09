@@ -67,7 +67,7 @@ class ServicesComponent extends Component
                     })
                     ->where('id', '!=', $this->gig->id)
                     ->active()
-                    ->orderByRaw('RAND()')
+                    ->inRandomOrder()
                     ->limit(3)
                     ->get();
 
