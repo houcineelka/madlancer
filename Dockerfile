@@ -1,7 +1,6 @@
 FROM php:8.1-apache
 
 RUN apt-get update && apt-get install -y \
-    libpq-dev \
     libzip-dev \
     libpng-dev \
     libjpeg-dev \
@@ -11,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd zip curl \
+    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip curl \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 

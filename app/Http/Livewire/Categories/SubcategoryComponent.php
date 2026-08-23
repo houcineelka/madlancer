@@ -112,7 +112,7 @@ class SubcategoryComponent extends Component
                     break;
                 
                 default:
-                    $query->inRandomOrder();
+                    $query->orderByRaw('RAND()');
                     break;
             }
         }

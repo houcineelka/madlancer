@@ -194,7 +194,7 @@
             <h2>Comments</h2>
             @if ($gig->counter_reviews)
               <div class="hr-comment-list">
-                @foreach ($gig->reviews()->inRandomOrder()->take(10)->get() as $review)
+                @foreach ($gig->reviews()->orderByRaw('RAND()')->take(10)->get() as $review)
                   <div class="hr-comment">
                     <img class="hr-comment__avatar" src="{{ src($review->user->avatar) }}" alt="{{ $review->user->username }}">
                     <div>

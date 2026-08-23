@@ -99,7 +99,7 @@ class AllGigsComponent extends Component
                     break;
                 
                 default:
-                    $query->inRandomOrder();
+                    $query->orderByRaw('RAND()');
                     break;
             }
         }
